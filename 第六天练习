@@ -1,0 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include<stdio.h>
+
+int main()
+{
+	//分支语句：if(else)语句-else if/switch(case)语句-break
+	//else与离它最近的未匹配的if进行匹配
+	//循环语句：while语句/for语句/do while语句\
+
+	int a = 0;
+	while ((a = getchar()) != EOF)
+	//EOF:end of file,即文件结束标志(作用类似于\0),本质上为从键盘获取EFO的ASCII码值-1并赋给getchar()
+	//getchar()函数是从缓冲区里读取、接收字符
+	{
+		printf("Putchar输出：");
+		putchar(a);
+		printf("\n");
+		printf("Printf输出：");
+		printf("%c\n", a);
+	}
+
+	int ret = 0;
+	char password[20] = { 0 };
+	printf("Please enter your password ：");
+	scanf("%s", password);
+	printf("Are you sure ?Please enter Y/N to verify it ：\n");
+	if ((ret = getchar()) == 'Y')
+	{
+		printf("Success ！\n");
+	}
+	else
+	{
+		printf("Give up .\n");
+	}
+
+	return 0;
+}
